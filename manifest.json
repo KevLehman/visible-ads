@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "VisibleAds",
+  "description": "This extension will allow you to identify ads on Google's search results",
+  "version": "1.0.0",
+  "author": "Kevin Aleman",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png"
+  },
+  "page_action": {
+    "default_popup": "action.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "page_action": {
+    "default_title": "VisibleAds",
+    "default_popup": "action.html"
+  }
+}
